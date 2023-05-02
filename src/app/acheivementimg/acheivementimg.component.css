@@ -1,0 +1,98 @@
+.container3 {
+	
+	display: flex;
+	align-items: center;
+	margin: auto;
+	width: 100%;
+	margin-top: 70px;
+	padding: auto;
+	object-fit: cover;
+	color:rgb(0, 0, 0);
+	text-align:justify;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background: rgba(236, 209, 76);
+  overflow-y: auto; 
+  margin-bottom: 70px;
+}
+
+.gallery1 {
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .stext {
+	color: rgb(0, 0, 0);
+	text-shadow: 2px 2px 4px #000000;
+  }
+  
+  .row1 {
+    margin: 8px -16px;
+  }
+  
+  /* Add padding BETWEEN each column */
+  .row1,
+  .row1 > .column1 {
+    padding: 8px;
+  }
+  
+  /* Create four equal columns that floats next to each other */
+  .column1 {
+    float: left;
+    width: 25%;
+  }
+  
+  /* Clear floats after rows */
+  .row1:after {
+    /* content1: ""; */
+    display: table;
+    clear: both;
+  }
+
+  /* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 900px) {
+    .column1 {
+      width: 50%;
+    }
+  }
+  
+  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column1 {
+      width: 100%;
+    }
+  }
+  .content1 {
+    padding: 10px;
+    background: transparent;
+  }
+
+  .image-containern {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .animate-imagen {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .image-containern:hover .animate-imagen {
+    transform: scale(1.1);
+  }
+
+  .fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

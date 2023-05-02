@@ -1,0 +1,58 @@
+.container2{
+	
+	border-bottom: 3px solid black;
+	display: flex;
+	align-items: center;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	padding: auto;
+	object-fit: cover;
+    padding-top: 30px;
+	padding-bottom: 30px;
+	align-items: center;
+	display: flex;
+	margin-top: 70px;
+	overflow-y: auto; 
+	margin-bottom: 70px;
+}
+
+.gallery {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gallery a:hover {
+    text-decoration: none;
+}
+
+.gallery a {
+    text-decoration: none;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.stext {
+	color: rgb(0, 0, 0);
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.cardresults {
+	float: left;
+	text-align: left;
+}

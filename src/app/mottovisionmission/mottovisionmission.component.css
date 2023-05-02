@@ -1,0 +1,97 @@
+.container2 {
+	
+	display: flex;
+	align-items: center;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	padding: auto;
+	object-fit: cover;
+  padding-top: 30px;
+	padding-bottom: 30px;
+	background-color: rgba(236, 209, 76);
+	align-items: center;
+	margin-top: 70px;
+  margin-bottom: 70px;
+  overflow-y: auto; 
+  
+}
+.card{
+
+	margin-right: 80px;
+	text-align: center;
+	margin: auto;
+	padding: auto;
+    
+}
+
+.cardleft{
+    margin-left: 120px;
+}
+.card1{
+    background-color: rgba(236, 209, 76);
+    color: black;
+    width: 18rem; 
+    height: 20rem;
+    min-width: fit-content;
+    border-radius: 15px;
+    padding: 50px 30px 50px 30px;
+    margin-bottom: 30px;
+    margin-right: 80px;
+    transition: all .4s;
+    box-shadow: 2px 2px 3px #131313;
+}
+.card-text{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
+}
+.service-item {
+    position: relative;
+    margin-top: 95px;
+  }
+  .service-item .icon {
+    width: 120px;
+    height: 120px;
+    display: inline-block;
+    
+    align-items: center;
+    background-color: #000000;
+    border-radius: 50%;
+    position: absolute;
+    right: -20px;
+    top: -60px;
+  }
+  
+ .service-item .icon img {
+    max-width: 80px;
+    
+  }
+  .service-item .icon img:hover {
+    max-width: 80px;
+    transform: scale(1.1);
+    opacity: 0;
+    
+  }
+  
+ 
+  
+.card1 h3{
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+.card1:hover 
+{
+    background-color: black;
+    color: rgba(236, 209, 76);
+}
+.card1:hover h3{
+  border-bottom: 2px solid  rgba(236, 209, 76);
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}

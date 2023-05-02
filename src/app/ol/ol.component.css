@@ -1,0 +1,88 @@
+.container2{
+	
+	border-bottom: 3px solid black;
+	display: flex;
+	align-items: center;
+	margin: auto;
+	width: 100%;
+	text-align: center;
+	padding: auto;
+	object-fit: cover;
+    padding-top: 30px;
+	padding-bottom: 30px;
+	display: flex;
+	margin-top: 70px;
+	margin-bottom: 70px;
+	overflow-y: auto; 
+}
+
+.gallery {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gallery a:hover {
+    text-decoration: none;
+}
+
+.gallery a {
+    text-decoration: none;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.stext {
+	color: rgb(0, 0, 0);
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.cardresults {
+	float: left;
+	text-align: left;
+}
+
+.card1{
+    background-color: rgba(236, 209, 76);
+    color: black;
+    width: 18rem; 
+    height: 20rem;
+    border-radius: 15px;
+    padding: 50px 30px 50px 30px;
+    margin-bottom: 30px;
+    margin-right: 80px;
+    transition: all .4s;
+    box-shadow: 2px 2px 3px #131313;
+}
+
+.card1 h3{
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.card1:hover 
+{
+    background-color: black;
+    color: rgba(236, 209, 76);
+}
+.card1:hover h5{
+	border-bottom: 2px solid  rgba(236, 209, 76);
+  }
+  
+  .card1:hover p{
+	color: rgba(236, 209, 76);
+  }
+  
