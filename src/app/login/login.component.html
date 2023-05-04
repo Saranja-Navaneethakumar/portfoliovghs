@@ -1,0 +1,48 @@
+<div class="container3">
+    <div class="gallery fade-in">
+        <h5>
+            <p class="fs-3 stext" align="center">LOGIN<p>
+        </h5><br>
+        <div align="center">
+            <img class="mt-2 mb-2" src="assets/images/icons/login-.png" width="70px" height="70px" align-items="center" alt="login">
+        </div>
+        <div class="card card1">
+            <div class="card-body">
+                <!-- <h3 class="card-title stext">MOTO</h3> -->
+                <form class="user-login"  [formGroup] = "loginform">
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-user fa-lg"></i></span>
+                        </div>
+                        <input type="text" class="form-control inputborder" formControlName ="username" name="username1" style="background-color: transparent;" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="text-danger boldtext" align="left" *ngIf="!loginForm.username?.valid">
+                        <div *ngIf="loginForm.username?.errors?.required"><p>Username is required</p></div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
+                        </div>
+                        <input type="text" formControlName ="password" name="password" class="form-control inputborder" style="background-color: transparent;" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="text-danger boldtext" align="left" *ngIf="!loginForm.password?.valid">
+                        <div *ngIf="loginForm.password?.errors?.required"><p>Password is required</p></div>
+                    </div>
+                    
+                    <div *ngIf="alertMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <p style="color:rgb(136, 36, 36)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ alertMessage }}</p> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    <button type="button" class="btn btn-dark login"  [disabled]="!loginform.valid" (click)="onSubmit()">Login</button>
+                </form> 
+            </div>
+        </div>
+            
+            
+    </div>
+</div>
+

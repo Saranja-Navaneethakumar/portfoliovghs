@@ -1,6 +1,16 @@
 <div id="header">
 
     <div class="nav1">
+
+        <div class="dropdown">
+            <a class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="btn btn1" routerLink="/contacts" ariaCurrentWhenActive="page" style="background-color: 237,238,238;"><i class="fa-solid fa-envelope fa-beat-fade --fa-animation-duration: 8s;"></i> Contact</a>
+                <a class="btn btn1" routerLink="/login" ariaCurrentWhenActive="page" style="background-color: 237,238,238;"><i class="fa-solid fa-right-to-bracket fa-beat-fade --fa-animation-duration: 8s;"></i> Login</a>
+            </div>
+        </div>
         
         <div class="dropdown"><a class="btn" routerLink="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" ariaCurrentWhenActive="page">
             <i class="fa-solid fa-house fa-beat-fade --fa-animation-duration: 8s;"></i> Home</a>
@@ -63,11 +73,14 @@
             <a class="btn" routerLink="/gallery" ariaCurrentWhenActive="page"style="background-color: 237,238,238;"><i class="fa-solid fa-camera fa-beat-fade --fa-animation-duration: 8s;"></i> Gallery</a>
         </div>
         
-        <div class="dropdown"><a class="btn btn1" routerLink="/contacts" ariaCurrentWhenActive="page" style="background-color: 237,238,238;"><i class="fa-solid fa-envelope fa-beat-fade --fa-animation-duration: 8s;"></i> Contact</a></div>
+        <!-- <div class="dropdown"><a class="btn btn1" routerLink="/contacts" ariaCurrentWhenActive="page" style="background-color: 237,238,238;"><i class="fa-solid fa-envelope fa-beat-fade --fa-animation-duration: 8s;"></i> Contact</a></div>
+        <div class="dropdown"><a class="btn btn1" routerLink="/login" ariaCurrentWhenActive="page" style="background-color: 237,238,238;"><i class="fa-solid fa-right-to-bracket fa-beat-fade --fa-animation-duration: 8s;"></i> Login</a></div> -->
         <div class="dropdown">
             <a class="btn" id="fblink" href="https://www.facebook.com/vembadi.jaffna.73"><i class="fa-brands fa-facebook-f fa-lg fa-bounce --fa-animation-duration: 8s;" style="color: rgb(46, 67, 175);"></i></a>
         </div>
        
+        
+          
         <div class="col-sm-3 search">
         <div class="input-group h-25">
             <input type="search" class="form-control" placeholder="Search" aria-label="Search" />

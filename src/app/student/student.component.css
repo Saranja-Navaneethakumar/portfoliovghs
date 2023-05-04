@@ -1,0 +1,71 @@
+.container3 {
+	
+	display: flex;
+	align-items: center;
+	margin: auto;
+	width: 100%;
+	padding: auto;
+	object-fit: cover;
+	color:rgb(0, 0, 0);
+	text-align:justify;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background: rgba(236, 209, 76);
+	margin-top: 70px;
+	margin-bottom: 70px;
+	overflow-y: auto; 
+}
+
+.gallery {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gallery a:hover {
+    text-decoration: none;
+}
+
+.gallery a {
+    text-decoration: none;
+}
+
+.center{
+	align-items: center;
+}
+
+.fade-in {
+	opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.stext {
+	color: rgb(0, 0, 0);
+	text-shadow: 2px 2px 4px #000000;
+}
+
+.pdiv{
+   align-items: justify;
+   color: black;
+   
+}
+
+.btn-circle.btn-sm {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    font-size: 8px;
+    text-align: center;
+}

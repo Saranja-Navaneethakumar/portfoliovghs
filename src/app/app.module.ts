@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -29,6 +31,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { SliderComponent } from './slider/slider.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { StudentComponent } from './student/student.component';
+
 
 
 
@@ -60,12 +65,15 @@ import { HomeComponent } from './home/home.component';
     SliderComponent,
     FooterComponent,
     HomeComponent,
-    
+    LoginComponent,
+    StudentComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
+    
     RouterModule.forRoot([
       {path: 'aboutus/pricipalmessage', component: PricipalmsgComponent},
       {path: 'aboutus/mottovisionmission', component: MottovisionmissionComponent},
@@ -89,7 +97,10 @@ import { HomeComponent } from './home/home.component';
       {path: 'aboutus/ourprincipal', component: OurprincipalComponent },
       {path: 'aboutus/welcome', component: WelcomeComponent},
       {path: 'slider', component: SliderComponent},
-      {path: '', component: HomeComponent}
+      {path: '', component: HomeComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'student', component: StudentComponent}
+      
     ]),
   ],
   providers: [],
