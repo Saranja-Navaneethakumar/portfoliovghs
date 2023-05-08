@@ -33,9 +33,10 @@ import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { StudentComponent } from './student/student.component';
+import { RegisterComponent } from './register/register.component';
 
 
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -67,12 +68,14 @@ import { StudentComponent } from './student/student.component';
     HomeComponent,
     LoginComponent,
     StudentComponent,
+    RegisterComponent,
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     
     RouterModule.forRoot([
       {path: 'aboutus/pricipalmessage', component: PricipalmsgComponent},
@@ -99,7 +102,8 @@ import { StudentComponent } from './student/student.component';
       {path: 'slider', component: SliderComponent},
       {path: '', component: HomeComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'student', component: StudentComponent}
+      {path: 'student', component: StudentComponent},
+      {path: 'register', component:RegisterComponent}
       
     ]),
   ],

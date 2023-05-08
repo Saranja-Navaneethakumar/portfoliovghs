@@ -8,37 +8,54 @@
         </div>
         <div class="card card1">
             <div class="card-body">
-                <!-- <h3 class="card-title stext">MOTO</h3> -->
-                <form class="user-login"  [formGroup] = "loginform">
-                    <div class="input-group mb-3 mt-2">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-user fa-lg"></i></span>
-                        </div>
-                        <input type="text" class="form-control inputborder" formControlName ="username" name="username1" style="background-color: transparent;" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Login</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="forgetpw-tab" data-bs-toggle="tab" data-bs-target="#forgetpw-tab-pane" type="button" role="tab" aria-controls="forgetpw-tab-pane" aria-selected="false">Forget Password</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="resetpw-tab" data-bs-toggle="tab" data-bs-target="#resetpw-tab-pane" type="button" role="tab" aria-controls="resetpw-tab-pane" aria-selected="false">Reset Password</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab" tabindex="0">
+                        <form class="user-login"  [formGroup] = "loginform">
+                            <div class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-user fa-lg"></i></span>
+                                </div>
+                                <input type="text" class="form-control inputborder" formControlName ="username" name="username1" style="background-color: transparent;" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+        
+                            <div class="text-danger boldtext" align="left" *ngIf="!loginForm.username?.valid">
+                                <div *ngIf="loginForm.username?.errors?.required"><p>Username is required</p></div>
+                            </div>
+        
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
+                                </div>
+                                <input type="text" formControlName ="password" name="password" class="form-control inputborder" style="background-color: transparent;" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                            </div>
+        
+                            <div class="text-danger boldtext" align="left" *ngIf="!loginForm.password?.valid">
+                                <div *ngIf="loginForm.password?.errors?.required"><p>Password is required</p></div>
+                            </div>
+        
+                            <div *ngIf="alertMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <p style="color:rgb(136, 36, 36)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ alertMessage }}</p> 
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+        
+                            <button type="button" class="btn btn-dark login"  [disabled]="!loginform.valid" (click)="onSubmit()"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
+                        </form> 
                     </div>
-
-                    <div class="text-danger boldtext" align="left" *ngIf="!loginForm.username?.valid">
-                        <div *ngIf="loginForm.username?.errors?.required"><p>Username is required</p></div>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
-                        </div>
-                        <input type="text" formControlName ="password" name="password" class="form-control inputborder" style="background-color: transparent;" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
-                    </div>
-
-                    <div class="text-danger boldtext" align="left" *ngIf="!loginForm.password?.valid">
-                        <div *ngIf="loginForm.password?.errors?.required"><p>Password is required</p></div>
-                    </div>
-                    
-                    <div *ngIf="alertMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <p style="color:rgb(136, 36, 36)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ alertMessage }}</p> 
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div>
-
-                    <button type="button" class="btn btn-dark login"  [disabled]="!loginform.valid" (click)="onSubmit()">Login</button>
-                </form> 
+                    <div class="tab-pane fade" id="forgetpw-tab-pane" role="tabpanel" aria-labelledby="forgetpw-tab" tabindex="0">Forget Password</div>
+                    <div class="tab-pane fade" id="resetpw-tab-pane" role="tabpanel" aria-labelledby="resetpw-tab" tabindex="0">Reset Password</div>
+                  </div>
             </div>
         </div>
             

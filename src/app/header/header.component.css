@@ -14,7 +14,8 @@
     align-items: center;
     border-radius: 0px 0px 20px 20px;
     top: 0!important;
-    z-index: 100;            
+    z-index: 100;       
+    box-shadow: 2px 2px 3px #131313;     
   } 
   
 

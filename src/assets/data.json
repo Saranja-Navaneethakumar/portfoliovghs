@@ -1,5 +1,12 @@
 {
     "username": "saran",
-    "password": "saran4"
+    "password": "saran4",
+    "firstname": "",
+    "lastname": "",
+    "dob":"",
+    "contact":"",
+    "address":"",
+    "email":"null",
+    "confirmpassword":""
     
   }

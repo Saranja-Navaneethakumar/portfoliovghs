@@ -54,11 +54,13 @@
 	text-shadow: 2px 2px 4px #000000;
 }
 
+
 .card{
 	margin-right: 80px;
 	text-align: center;
 	margin: auto;
-	padding: auto; 
+	padding: auto;
+    
 }
 
 
@@ -66,7 +68,7 @@
     background-color: rgba(236, 209, 76);
     color: black;
     width: 30rem; 
-    height: 25rem;
+    height: 50rem;
     min-width: fit-content;
     border-radius: 15px;
     padding: 50px 30px 50px 30px;
@@ -77,16 +79,15 @@
 }
 .card-text{
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px; 
 }
 
-.login{
+.register{
     color: rgba(236, 209, 76);
-	margin-bottom: 20px;
 }
 
 .boldtext{
-    font-weight: 500;
+    font-weight: 900;
 }
 
 .icon{
@@ -97,7 +98,6 @@
 	border-color:  rgb(71, 71, 71);
 }
 
-.password button {
-	display: inline-block;
-	color: rgba(236, 209, 76);	
-  }
+div.beside {
+    display: inline-block;
+}

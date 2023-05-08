@@ -1,0 +1,124 @@
+<div class="container3">
+    <div class="gallery fade-in">
+        <h5>
+            <p class="fs-3 stext" align="center">REGISTER<p>
+        </h5><br>
+        <div align="center">
+            <img class="mt-2 mb-2" src="assets/images/icons/registered.png" width="70px" height="70px" align-items="center" alt="register">
+        </div>
+        <div class="card card1">
+            <div class="card-body overflow-auto">
+                
+                <form class="user-register" [formGroup] = "registerform">
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-id-card fa-lg"></i></span>
+                        </div>
+                        <input type="text" class="form-control inputborder" formControlName ="firstname" name="firstname" style="background-color: transparent;" placeholder="First Name" aria-label="firstname" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="text-danger boldtext" align="left" *ngIf="!registerForm.firstname?.valid">
+                        <div *ngIf="registerForm.firstname?.errors?.required">*</div>
+                    </div>
+
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-id-card fa-lg"></i></span>
+                        </div>
+                        <input type="text" class="form-control inputborder" formControlName ="lastname" name="lastname" style="background-color: transparent;" placeholder="Last Name" aria-label="lastname" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="text-danger boldtext" align="left" *ngIf="!registerForm.lastname?.valid">
+                        <div *ngIf="registerForm.lastname?.errors?.required">*</div>
+                    </div>
+
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-house-chimney-window fa-lg"></i></span>
+                        </div>
+                        <input type="text" class="form-control inputborder" formControlName ="address" name="address" style="background-color: transparent;" placeholder="Address" aria-label="Address" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="text-danger boldtext" align="left" *ngIf="!registerForm.address?.valid">
+                        <div *ngIf="registerForm.address?.errors?.required">*</div>
+                    </div>
+
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-calendar-days fa-lg"></i></span>
+                        </div>
+                        <input type="date" class="form-control inputborder" formControlName ="dob" name="dob" style="background-color: transparent;" placeholder="Date of Birth" aria-label="DOB" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="text-danger boldtext" align="left" *ngIf="!registerForm.dob?.valid">
+                        <div *ngIf="registerForm.dob?.errors?.required">*</div>
+                    </div>
+
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-phone fa-lg"></i></span>
+                        </div>
+                        <input type="text" class="form-control inputborder" formControlName ="contact" name="contact" style="background-color: transparent;" placeholder="Contact Number" aria-label="contact" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="text-danger boldtext" align="left" *ngIf="!registerForm.contact?.valid">
+                        <div *ngIf="registerForm.contact?.errors?.required">*</div>
+                    </div>
+
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-envelope fa-lg"></i></span>
+                        </div>
+                        <input type="text" class="form-control inputborder" formControlName ="email" name="email" style="background-color: transparent;" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="text-danger" align="left" *ngIf="!registerForm.email?.valid">
+                        
+                        <div *ngIf="registerForm.email?.errors?.email" class="fs-6"><p>Email is invalid</p></div>
+                        <div *ngIf="registerForm.email?.errors?.required" class="boldtext">*</div>
+                    </div>
+                    
+                    <div class="input-group mb-3 mt-2">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-user fa-lg"></i></span>
+                        </div>
+                        <input type="text" class="form-control inputborder" formControlName ="username" name="username" style="background-color: transparent;" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="text-danger boldtext" align="left" *ngIf="!registerForm.username?.valid">
+                        <div *ngIf="registerForm.username?.errors?.required">*</div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
+                        </div>
+                        <input type="password" formControlName ="password" name="password" class="form-control inputborder" style="background-color: transparent;" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="text-danger" align="left" *ngIf="!registerForm.password?.valid">
+                        <div *ngIf="registerForm.password?.errors?.required" class="boldtext">*</div>
+                        <div *ngIf="registerForm.password.touched && registerForm.password.errors?.invalidPassword" class="fs-6">
+                            Password should have minimum 5 characters, at least 1 uppercase letter, 1 lowercase
+                            letter and 1 number
+                        </div>
+                    </div>
+                    
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                        <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-lock fa-lg"></i></span>
+                        </div>
+                        <input type="password" formControlName ="confirmpassword" name="confirmpassword" class="form-control inputborder" style="background-color: transparent;" placeholder="Confirm Password" aria-label="Confirm Password" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="text-danger" align="left" *ngIf="!registerForm.confirmpassword?.valid">
+                        <div *ngIf="registerForm.confirmpassword?.errors?.required" class="boldtext">*</div>
+                        <div *ngIf="registerForm.confirmpassword.touched && registerForm.confirmpassword.errors?.passwordMismatch" class="fs-6">Passwords does not match</div>
+                    </div>
+
+                    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+                        <p style="color:rgb(36, 136, 51)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ alert }}</p> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    <button type="button" class="btn btn-dark register" [disabled]="!registerform.valid" (click)="onSubmit()"><i class="fa-solid fa-address-card"></i> Register</button>
+                </form> 
+            </div>
+        </div>
+            
+            
+    </div>
+</div>
+
