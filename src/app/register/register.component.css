@@ -76,6 +76,9 @@
 	margin-top: 20px;
     transition: all .4s;
     box-shadow: 2px 2px 3px #131313;
+	width: fit-content;
+	block-size: fit-content;
+
 }
 .card-text{
     margin-top: 10px;

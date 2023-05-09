@@ -7,7 +7,7 @@
             <img class="mt-2 mb-2" src="assets/images/icons/registered.png" width="70px" height="70px" align-items="center" alt="register">
         </div>
         <div class="card card1">
-            <div class="card-body overflow-auto">
+            <div class="card-body">
                 
                 <form class="user-register" [formGroup] = "registerform">
                     <div class="input-group mb-3 mt-2">
@@ -108,8 +108,13 @@
                         <div *ngIf="registerForm.confirmpassword.touched && registerForm.confirmpassword.errors?.passwordMismatch" class="fs-6">Passwords does not match</div>
                     </div>
 
-                    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
-                        <p style="color:rgb(36, 136, 51)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ alert }}</p> 
+                    <div *ngIf="successalert" class="alert alert-success alert-dismissible fade show" role="alert">
+                        <p style="color:rgb(36, 136, 51)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ successalert }}</p> 
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+
+                    <div *ngIf="failurealert" class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <p style="color:rgb(199, 27, 27);"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ failurealert }}</p> 
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
 

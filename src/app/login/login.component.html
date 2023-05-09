@@ -11,13 +11,13 @@
                 
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Login</button>
+                      <button class="nav-link active tab" id="login-tab" data-bs-toggle="tab" data-bs-target="#login-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Login</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="forgetpw-tab" data-bs-toggle="tab" data-bs-target="#forgetpw-tab-pane" type="button" role="tab" aria-controls="forgetpw-tab-pane" aria-selected="false">Forget Password</button>
+                    <li class="nav-item tab" role="presentation">
+                      <button class="nav-link tab" id="forgetpw-tab" data-bs-toggle="tab" data-bs-target="#forgetpw-tab-pane" type="button" role="tab" aria-controls="forgetpw-tab-pane" aria-selected="false">Forget Password</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="resetpw-tab" data-bs-toggle="tab" data-bs-target="#resetpw-tab-pane" type="button" role="tab" aria-controls="resetpw-tab-pane" aria-selected="false">Reset Password</button>
+                    <li class="nav-item tab" role="presentation">
+                      <button class="nav-link tab" id="resetpw-tab" data-bs-toggle="tab" data-bs-target="#resetpw-tab-pane" type="button" role="tab" aria-controls="resetpw-tab-pane" aria-selected="false">Reset Password</button>
                     </li>
                   </ul>
                   <div class="tab-content" id="myTabContent">
@@ -30,7 +30,7 @@
                                 <input type="text" class="form-control inputborder" formControlName ="username" name="username1" style="background-color: transparent;" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                             </div>
         
-                            <div class="text-danger boldtext" align="left" *ngIf="!loginForm.username?.valid">
+                            <div class="text-danger boldtext" align="left" *ngIf="!loginForm.username?.valid && loginForm.username?.touched">
                                 <div *ngIf="loginForm.username?.errors?.required"><p>Username is required</p></div>
                             </div>
         
@@ -38,23 +38,146 @@
                                 <div class="input-group-prepend">
                                 <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
                                 </div>
-                                <input type="text" formControlName ="password" name="password" class="form-control inputborder" style="background-color: transparent;" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                                <input type="password" formControlName ="password" name="password" class="form-control inputborder" style="background-color: transparent;" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
                             </div>
         
-                            <div class="text-danger boldtext" align="left" *ngIf="!loginForm.password?.valid">
+                            <div class="text-danger boldtext" align="left" *ngIf="!loginForm.password?.valid && loginForm.password?.touched">
                                 <div *ngIf="loginForm.password?.errors?.required"><p>Password is required</p></div>
                             </div>
-        
-                            <div *ngIf="alertMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <p style="color:rgb(136, 36, 36)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ alertMessage }}</p> 
+
+                            <div *ngIf="successalert" class="alert alert-success alert-dismissible fade show" role="alert">
+                                <p style="color:rgb(36, 136, 51)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ successalert }}</p> 
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            <div *ngIf="failalert" class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <p style="color:rgb(136, 36, 36)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ failalert }}</p> 
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
         
                             <button type="button" class="btn btn-dark login"  [disabled]="!loginform.valid" (click)="onSubmit()"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
                         </form> 
                     </div>
-                    <div class="tab-pane fade" id="forgetpw-tab-pane" role="tabpanel" aria-labelledby="forgetpw-tab" tabindex="0">Forget Password</div>
-                    <div class="tab-pane fade" id="resetpw-tab-pane" role="tabpanel" aria-labelledby="resetpw-tab" tabindex="0">Reset Password</div>
+                    
+
+                    <div class="tab-pane fade" id="forgetpw-tab-pane" role="tabpanel" aria-labelledby="forgetpw-tab" tabindex="0">
+                        <form class="forget-pw" [formGroup] ="forgetpwform">
+                            <div class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-envelope fa-lg"></i></span>
+                                </div>
+                                <input type="text" class="form-control inputborder" formControlName ="email" name="email" style="background-color: transparent;" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="text-danger" align="left" *ngIf="!forgetForm.email?.valid && forgetForm.email?.touched">
+                                <div *ngIf="forgetForm.email?.errors?.email" class="fs-6"><p>Email is invalid</p></div>
+                                <div *ngIf="forgetForm.email?.errors?.required" class="boldtext">*</div>
+                            </div>
+        
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
+                                </div>
+                                <input type="password" formControlName ="passwordf" name="password" class="form-control inputborder" style="background-color: transparent;" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+                            </div>
+        
+                            <div class="text-danger" align="left" *ngIf="!forgetForm.passwordf?.valid && forgetForm.passwordf?.touched">
+                                <div *ngIf="forgetForm.passwordf?.errors?.required" class="boldtext">*</div>
+                                <div *ngIf="forgetForm.passwordf.touched && forgetForm.passwordf.errors?.invalidPassword" class="fs-6">
+                                    Password should have minimum 5 characters, at least 1 uppercase letter, 1 lowercase
+                                    letter and 1 number
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
+                                </div>
+                                <input type="password" formControlName ="confirmpasswordf"  name="confirmpasswordf" class="form-control inputborder" style="background-color: transparent;" placeholder="Confirm Password" aria-label="Password" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="text-danger" align="left" *ngIf="!forgetForm.confirmpassword?.valid && forgetForm.confirmpassword?.touched">
+                                <div *ngIf="forgetForm.confirmpassword?.errors?.required" class="boldtext">*</div>
+                                <div *ngIf="forgetForm.confirmpassword.touched && forgetForm.confirmpassword.errors?.passwordMismatch" class="fs-6">Passwords does not match</div>
+                            </div>
+
+                            <div *ngIf="successalert" class="alert alert-success alert-dismissible fade show" role="alert">
+                                <p style="color:rgb(36, 136, 51)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ successalert }}</p> 
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            <div *ngIf="failalert" class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <p style="color:rgb(136, 36, 36)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ failalert }}</p> 
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+        
+                        
+                            <button type="button" class="btn btn-dark login"   (click)="onForget()"[disabled]="!forgetpwform.valid"><i class="fa-solid fa-pen-to-square"></i> Update Password</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="resetpw-tab-pane" role="tabpanel" aria-labelledby="resetpw-tab" tabindex="0">
+                        <form class="forget-pw" [formGroup] ="resetpwform">
+                            <div class="input-group mb-3 mt-4">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-envelope fa-lg"></i></span>
+                                </div>
+                                <input type="text" class="form-control inputborder" formControlName ="email" name="email" style="background-color: transparent;" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="text-danger" align="left" *ngIf="!resetForm.email?.valid && resetForm.email?.touched">
+                                <div *ngIf="resetForm.email?.errors?.email" class="fs-6"><p>Email is invalid</p></div>
+                                <div *ngIf="resetForm.email?.errors?.required" class="boldtext">*</div>
+                            </div>
+        
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
+                                </div>
+                                <input type="password" formControlName ="oldpassword" name="oldpassword" class="form-control inputborder" style="background-color: transparent;" placeholder="Old Password" aria-label="Password" aria-describedby="basic-addon1">
+                            </div>
+        
+                            <div class="text-danger" align="left" *ngIf="!resetForm.oldpassword?.valid && resetForm.oldpassword?.touched">
+                                <div *ngIf="resetForm.oldpassword?.errors?.required" class="boldtext">*</div>
+                                <div *ngIf="resetForm.oldpassword.touched && resetForm.oldpassword.errors?.invalidPassword" class="fs-6">
+                                    Password should have minimum 5 characters, at least 1 uppercase letter, 1 lowercase
+                                    letter and 1 number
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
+                                </div>
+                                <input type="password" formControlName ="newpassword" name="newpassword" class="form-control inputborder" style="background-color: transparent;" placeholder="New Password" aria-label="Password" aria-describedby="basic-addon1">
+                            </div>
+        
+                            <div class="text-danger" align="left" *ngIf="!resetForm.newpassword?.valid && resetForm.newpassword?.touched">
+                                <div *ngIf="resetForm.newpassword?.errors?.required" class="boldtext">*</div>
+                                <div *ngIf="resetForm.newpassword.touched && resetForm.newpassword.errors?.invalidPassword" class="fs-6">
+                                    Password should have minimum 5 characters, at least 1 uppercase letter, 1 lowercase
+                                    letter and 1 number
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                <span class="input-group-text border-0 icon" style="background-color: transparent;" id="basic-addon1"><i class="fa-solid fa-key fa-lg"></i></span>
+                                </div>
+                                <input type="password" formControlName ="confirmpw"  name="confirmpw" class="form-control inputborder" style="background-color: transparent;" placeholder="Confirm Password" aria-label="Password" aria-describedby="basic-addon1">
+                            </div>
+                            <div class="text-danger" align="left" *ngIf="!resetForm.confirmpw?.valid && resetForm.confirmpw?.touched">
+                                <div *ngIf="resetForm.confirmpw?.errors?.required" class="boldtext">*</div>
+                                <div *ngIf="resetForm.confirmpw.touched && resetForm.confirmpw.errors?.passwordMismatch" class="fs-6">Passwords does not match</div>
+                            </div>
+
+                            <div *ngIf="successalert" class="alert alert-success alert-dismissible fade show" role="alert">
+                                <p style="color:rgb(36, 136, 51)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ successalert }}</p> 
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            <div *ngIf="failalert" class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <p style="color:rgb(136, 36, 36)"><i class="fa-solid fa-lg fa-triangle-exclamation"></i> {{ failalert }}</p> 
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+        
+                        
+                            <button type="button" class="btn btn-dark login"   (click)="onresetpw()"[disabled]="!resetpwform.valid"><i class="fa-solid fa-user-pen"></i> Reset Password</button>
+                        </form>
+                    </div>
                   </div>
             </div>
         </div>
