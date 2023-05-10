@@ -22,6 +22,7 @@
                   </ul>
                   <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="login-tab-pane" role="tabpanel" aria-labelledby="login-tab" tabindex="0">
+                        
                         <form class="user-login"  [formGroup] = "loginform">
                             <div class="input-group mb-3 mt-4">
                                 <div class="input-group-prepend">
@@ -175,7 +176,7 @@
                             </div>
         
                         
-                            <button type="button" class="btn btn-dark login"   (click)="onresetpw()"[disabled]="!resetpwform.valid"><i class="fa-solid fa-user-pen"></i> Reset Password</button>
+                            <button type="button" class="btn btn-dark login" (click)="onresetpw()" [disabled]="!resetpwform.valid"><i class="fa-solid fa-user-pen"></i> Reset Password</button>
                         </form>
                     </div>
                   </div>

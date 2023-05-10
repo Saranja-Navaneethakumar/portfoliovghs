@@ -6,6 +6,86 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
        
+            <div *ngIf="view" class="container">
+               
+                <!-- <div class="info-box trasparent">
+                    <span class="info-box-icon bg-dark"><i class="fa fa-info text"></i></span>
+                    <div class="info-box-content">
+                      <span class="info-box-text"> {{firstname}}</span>  
+                      <span class="info-box-number">1,410</span>
+                    </div>
+                </div> -->
+                <!-- <p> {{lastname}}</p><p>{{contact}}</p><p>{{dob}}</p><p> {{email}}</p> -->
+                <div class="row">
+                  <div class="col">
+                    <div class="card card1">
+                      <div class="card-header" style="background-color: transparent;">
+                        <h5 class="stext">Details</h5>
+                      </div>
+                      <div class="card-body">
+                        <label>Firstname : </label>{{firstname}}<br>
+                        <label>Lastname : </label>{{lastname}}<br>
+                        <label>Email : </label>{{email}}<br>
+                        <label>Contact No : </label>{{contact}}<br>
+                        <label>Date of Birth : </label>{{dob}}<br>
+                        <label>Contact No : </label>{{contact}}<br>
+                        <label>Address : </label>{{address}}<br>
+                      </div>
+                    </div>
+                  </div>
+
+              <div class="col">
+                <div class="container">
+                  <div class="row section">
+                    <div class="col">
+                      <div class="info-box">
+                        <span class="info-box-icon"><img class="mt-1 mb-2" src="assets/images/icons/best.png" width="50px" height="50px" align-items="center" alt="name"></span>
+                        <div class="info-box-content">
+                          <span class="info-box-text stext"><h5>G.C.E O/L</h5></span>  
+                          <span class="info-box-number">8As, B</span>
+                        </div>
+                      </div> 
+                    </div>
+                    <div class="col">
+                      <div class="info-box">
+                        <span class="info-box-icon"><img class="mt-1 mb-2" src="assets/images/icons/graduation-hat.png" width="50px" height="50px" align-items="center" alt="name"></span>
+                        <div class="info-box-content">
+                          <span class="info-box-text stext"><h5>G.C.E A/L</h5></span>  
+                          <span class="info-box-number">B, 2Cs</span>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                  <div class="row section">
+                    <div class="col-md-6">
+                      <div class="info-box">
+                        <span class="info-box-icon"><img class="mt-1 mb-2" src="assets/images/icons/sports.png" width="50px" height="50px" align-items="center" alt="name"></span>
+                        <div class="info-box-content">
+                          <span class="info-box-text stext"><h5>House</h5></span>  
+                          <span class="info-box-number">
+                            <button type="button" class="btn-sm btn-circle border-0" style="background-color:rgb(255, 140, 0);"></button>
+                            Thambiah
+                          </span>
+                        </div>
+                      </div> 
+                    </div>
+                    <div class="col-md-6">
+                      <div class="info-box">
+                        <span class="info-box-icon"><img class="mt-1 mb-2" src="assets/images/icons/competition.png" width="50px" height="50px" align-items="center" alt="name"></span>
+                        <div class="info-box-content">
+                          <span class="info-box-text stext"><h5>Competitons</h5></span>  
+                          <span class="info-box-number"></span>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+            </div>
+
             
+            </div>
     </div>
 </div>

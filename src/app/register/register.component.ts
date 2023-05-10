@@ -66,26 +66,23 @@ export class RegisterComponent implements OnInit {
 
       const currentItems = this.datastore.getItem('items') || []; 
       const emailExists = currentItems.some((item: { email: any; }) => item.email === email);
-      
+      const usernameExist = currentItems.some((item: { username: any; }) => item.username === username);
       
     if(this.registerform.valid)
     {
-      if (!emailExists) {
+      if (!emailExists && !usernameExist) {
         currentItems.push(details);
         this.datastore.setItem('items', currentItems);  
         this.successalert = 'Successfully registered !'+firstname;
         this.registerform.reset();
       }
       else{
-        this.failurealert = 'Invalid register, Email already exists !';
+        this.failurealert = 'Invalid register!';
         this.registerform.reset();
+        console.log( this.failurealert)
       }
       
-      
     }
-    
-      
-    
   }
 
   get registerForm()

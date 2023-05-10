@@ -32,7 +32,7 @@
         </div> -->
         
     
-        <div class="dropdown">
+        <div class="dropdown align">
              <a class="btn dropdown-toggle border-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-book fa-beat-fade --fa-animation-duration: 8s;"></i> About Us
              </a>
@@ -97,11 +97,17 @@
         
         <!-- <div class="dropdown"><a class="btn btn1" routerLink="/contacts" ariaCurrentWhenActive="page" style="background-color: 237,238,238;"><i class="fa-solid fa-envelope fa-beat-fade --fa-animation-duration: 8s;"></i> Contact</a></div>
         <div class="dropdown"><a class="btn btn1" routerLink="/login" ariaCurrentWhenActive="page" style="background-color: 237,238,238;"><i class="fa-solid fa-right-to-bracket fa-beat-fade --fa-animation-duration: 8s;"></i> Login</a></div> -->
-        <div class="dropdown">
+        <div class="dropdown align">
             <a class="btn" id="fblink" href="https://www.facebook.com/vembadi.jaffna.73"><i class="fa-brands fa-facebook-f fa-lg fa-bounce --fa-animation-duration: 8s;" style="color: rgb(46, 67, 175);"></i></a>
         </div>
        
+        <div *ngIf="login" class="icontext">
+            <a class="btn" style="color:rgba(236, 209, 76);" routerLink="/student" (click)="onview()"><i class="fa-solid fa-eye --fa-animation-duration: 8s;"></i></a>
+         </div>
         
+         <div *ngIf="login" class="icontext">
+            <a class="btn" routerLink="/" ariaCurrentWhenActive="page" (click)="onLogout()" style="color:rgba(236, 209, 76);"><i class="fa-solid fa-right-from-bracket --fa-animation-duration: 8s;"></i></a>
+         </div>
           
         <div class="col-sm-3 search">
         <div class="input-group h-25">

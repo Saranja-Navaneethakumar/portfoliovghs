@@ -70,10 +70,12 @@ export class LoginComponent implements OnInit {
       if(username == data.username && password == data.password){
         this.sharedService.changeMessage('You have successfully logged in!');
         this.sharedService.printuser(username);
+        this.sharedService.setloginstate(true);
+        this.sharedService.setemail(data.email)
         this.router.navigate(['/student']);
       }
       else{
-        this.successalert = 'Invalid Login!';
+        this.failalert = 'Invalid Login!';
         this.loginform.reset();
       }
     }
@@ -82,6 +84,8 @@ export class LoginComponent implements OnInit {
         if(username == filterdata[i].username && password == filterdata[i].password){
           this.sharedService.changeMessage('You have successfully logged in!');
           this.sharedService.printuser(username);
+          this.sharedService.setloginstate(true);
+          this.sharedService.setemail(filterdata[i].email)
           this.router.navigate(['/student']);
         }
         else{

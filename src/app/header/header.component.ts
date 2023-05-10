@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  login: boolean | undefined;
+  constructor(private sharedService: SharedService) { 
+    
+  }
 
   ngOnInit(): void {
+    this.sharedService.login.subscribe(state => this.login = state)
+  }
+
+  onview()
+  {
+    this.sharedService.setviewdetails(true);
+  }
+
+  onLogout()
+  {
+    this.sharedService.setloginstate(false);
   }
 
 }
+
