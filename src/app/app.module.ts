@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -37,6 +37,7 @@ import { RegisterComponent } from './register/register.component';
 
 
 import { HttpClientModule } from '@angular/common/http';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -69,13 +70,16 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     StudentComponent,
     RegisterComponent,
+    AdminComponent,
     
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    
     
     RouterModule.forRoot([
       {path: 'aboutus/pricipalmessage', component: PricipalmsgComponent},
@@ -103,7 +107,9 @@ import { HttpClientModule } from '@angular/common/http';
       {path: '', component: HomeComponent},
       {path: 'login', component: LoginComponent},
       {path: 'student', component: StudentComponent},
-      {path: 'register', component:RegisterComponent}
+      {path: 'register', component:RegisterComponent},
+      {path: 'admin', component:AdminComponent,
+    }
       
     ]),
   ],

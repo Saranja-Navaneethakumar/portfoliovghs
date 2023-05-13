@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Student } from './student.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,18 +20,23 @@ export class HandledataService {
   setItem(key: string, value: any): void {
     localStorage.setItem(key, JSON.stringify(value));
   }
-  //print data in localstorage browser
 
   getItem(key: string): any {
     const item = localStorage.getItem(key);
     return item ? JSON.parse(item) : null;
   }
 
-  appendItem(key: string, newData: any) {
-    const data: any[] = this.getItem(key);
-    data.push(newData);
-    this.setItem(key, data);
-  }
+  private _Student$ = new BehaviorSubject<Array<Student>>([]);
+  Student$ = this._Student$.asObservable();
   
+  // setStudent(student:Student[]){
+  //   this._Student$.next(student)
+  // }
 
+  private _Regno$ = new BehaviorSubject<number>(0);
+  Regno$ = this._Regno$.asObservable();
+
+  setRegno(regno:number){
+    this._Regno$.next(regno);
+  }
 }

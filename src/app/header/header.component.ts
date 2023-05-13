@@ -9,12 +9,17 @@ import { SharedService } from '../shared.service';
 export class HeaderComponent implements OnInit {
 
   login: boolean | undefined;
+  adminstatus: boolean | undefined;
+  visible:boolean | undefined;
   constructor(private sharedService: SharedService) { 
     
   }
 
   ngOnInit(): void {
     this.sharedService.login.subscribe(state => this.login = state)
+    this.sharedService.adminstate.subscribe(data => this.adminstatus = data)
+    this.sharedService.hidev.subscribe(data => this.visible = data)
+    // console.log(this.adminstatus)
   }
 
   onview()
@@ -27,5 +32,9 @@ export class HeaderComponent implements OnInit {
     this.sharedService.setloginstate(false);
   }
 
+  adminpanel()
+  {
+    this.sharedService.setadminview(true);
+  }
 }
 

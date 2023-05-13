@@ -21,6 +21,14 @@ export class SharedService {
   private email = new BehaviorSubject<string>('');
   useremail = this.email.asObservable();
 
+  private admin = new BehaviorSubject<boolean>(false);
+  adminstate = this.admin.asObservable();
+
+  private hideview = new BehaviorSubject<boolean>(false);
+  hidev = this.hideview.asObservable();
+
+  private admindashboard = new BehaviorSubject<boolean>(false);
+  admindash = this.admindashboard.asObservable();
 
   constructor() { }
 
@@ -46,5 +54,17 @@ export class SharedService {
   setemail(email:string)
   {
     this.email.next(email)
+  }
+
+  setadmin(admin:boolean){
+    this.admin.next(admin)
+  }
+
+  sethide(state:boolean){
+    this.hideview.next(state)
+  }
+
+  setadminview(state:boolean){
+    this.admindashboard.next(state)
   }
 }

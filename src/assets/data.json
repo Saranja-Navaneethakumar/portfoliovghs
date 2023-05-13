@@ -1,12 +1,7 @@
 {
     "username": "saran",
     "password": "saran4",
-    "firstname": "",
-    "lastname": "",
-    "dob":"",
-    "contact":"",
-    "address":"",
     "email":"saran4@gmail.com",
-    "confirmpassword":""
+    "role" : "admin"
     
   }

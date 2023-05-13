@@ -8,23 +8,16 @@
        
             <div *ngIf="view" class="container">
                
-                <!-- <div class="info-box trasparent">
-                    <span class="info-box-icon bg-dark"><i class="fa fa-info text"></i></span>
-                    <div class="info-box-content">
-                      <span class="info-box-text"> {{firstname}}</span>  
-                      <span class="info-box-number">1,410</span>
-                    </div>
-                </div> -->
-                <!-- <p> {{lastname}}</p><p>{{contact}}</p><p>{{dob}}</p><p> {{email}}</p> -->
                 <div class="row">
                   <div class="col">
                     <div class="card card1">
                       <div class="card-header" style="background-color: transparent;">
-                        <h5 class="stext">Details</h5>
+                        <h4 class="stext">Details</h4>
                       </div>
                       <div class="card-body">
                         <label>Firstname : </label>{{firstname}}<br>
                         <label>Lastname : </label>{{lastname}}<br>
+                        <label>Registration No : </label>{{regno}}<br>
                         <label>Email : </label>{{email}}<br>
                         <label>Contact No : </label>{{contact}}<br>
                         <label>Date of Birth : </label>{{dob}}<br>
@@ -42,7 +35,7 @@
                         <span class="info-box-icon"><img class="mt-1 mb-2" src="assets/images/icons/best.png" width="50px" height="50px" align-items="center" alt="name"></span>
                         <div class="info-box-content">
                           <span class="info-box-text stext"><h5>G.C.E O/L</h5></span>  
-                          <span class="info-box-number">8As, B</span>
+                          <span class="info-box-number">{{ol}}</span>
                         </div>
                       </div> 
                     </div>
@@ -51,7 +44,7 @@
                         <span class="info-box-icon"><img class="mt-1 mb-2" src="assets/images/icons/graduation-hat.png" width="50px" height="50px" align-items="center" alt="name"></span>
                         <div class="info-box-content">
                           <span class="info-box-text stext"><h5>G.C.E A/L</h5></span>  
-                          <span class="info-box-number">B, 2Cs</span>
+                          <span class="info-box-number">{{al}}</span>
                         </div>
                       </div> 
                     </div>
@@ -63,18 +56,35 @@
                         <div class="info-box-content">
                           <span class="info-box-text stext"><h5>House</h5></span>  
                           <span class="info-box-number">
-                            <button type="button" class="btn-sm btn-circle border-0" style="background-color:rgb(255, 140, 0);"></button>
-                            Thambiah
+                            <button type="button" class="btn-sm btn-circle border-0" 
+                            [ngClass]="{'Creedy-color': house === 'Creedy', 'Hornby-color': house === 'Hornby', 'Thambiah-color': house === 'Thambiah', 
+                            'Lythe-color': house === 'Lythe', 'Scowcroft-color': house === 'Scowcroft'}"></button>
+                            {{house}}
                           </span>
                         </div>
                       </div> 
                     </div>
+                    
                     <div class="col-md-6">
                       <div class="info-box">
-                        <span class="info-box-icon"><img class="mt-1 mb-2" src="assets/images/icons/competition.png" width="50px" height="50px" align-items="center" alt="name"></span>
+                        <span class="info-box-icon"><img class="mt-1 mb-2" src="assets/images/icons/medal.png" width="50px" height="50px" align-items="center" alt="name"></span>
                         <div class="info-box-content">
-                          <span class="info-box-text stext"><h5>Competitons</h5></span>  
-                          <span class="info-box-number"></span>
+                          <span class="info-box-text stext"><h5>Awards</h5></span>  
+                          <span class="info-box-number">{{awards}}
+                          </span>
+                        </div>
+                      </div> 
+                    </div>
+                  </div>
+
+                  <div class="row section">
+                    
+                    <div class="col-md-6">
+                      <div class="info-box">
+                        <span class="info-box-icon"><img class="mt-1 mb-2" src="assets/images/icons/helping-hand.png" width="50px" height="50px" align-items="center" alt="name"></span>
+                        <div class="info-box-content">
+                          <span class="info-box-text stext"><h5>Contribution</h5></span>  
+                          <span class="info-box-number">{{contribution}}</span>
                         </div>
                       </div> 
                     </div>
@@ -84,8 +94,8 @@
 
               
             </div>
-
-            
             </div>
     </div>
 </div>
+
+

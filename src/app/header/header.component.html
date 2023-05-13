@@ -101,12 +101,18 @@
             <a class="btn" id="fblink" href="https://www.facebook.com/vembadi.jaffna.73"><i class="fa-brands fa-facebook-f fa-lg fa-bounce --fa-animation-duration: 8s;" style="color: rgb(46, 67, 175);"></i></a>
         </div>
        
-        <div *ngIf="login" class="icontext">
-            <a class="btn" style="color:rgba(236, 209, 76);" routerLink="/student" (click)="onview()"><i class="fa-solid fa-eye --fa-animation-duration: 8s;"></i></a>
+        <div *ngIf="login  && visible" class="icontext">
+            <a class="btn" style="color:rgba(236, 209, 76);" routerLink="/student" (click)="onview()"><i class="fa-solid fa-eye fa-beat-fade --fa-animation-duration: 8s;"></i></a>
          </div>
         
          <div *ngIf="login" class="icontext">
-            <a class="btn" routerLink="/" ariaCurrentWhenActive="page" (click)="onLogout()" style="color:rgba(236, 209, 76);"><i class="fa-solid fa-right-from-bracket --fa-animation-duration: 8s;"></i></a>
+            <a class="btn" routerLink="/" ariaCurrentWhenActive="page" (click)="onLogout()" style="color:rgba(236, 209, 76);"><i class="fa-solid fa-beat-fade fa-right-from-bracket --fa-animation-duration: 8s;"></i></a>
+         </div>
+
+         <div *ngIf="adminstatus && login"  class="icontext">
+            <a class="btn" ariaCurrentWhenActive="page" routerLink="/admin" (click)="adminpanel()" style="color:rgba(236, 209, 76);" 
+            data-bs-toggle="collapse" data-bs-target="#collapseadmin" aria-expanded="false" aria-controls="collapseadmin">
+            <i class="fa-solid fa-user-lock fa-beat-fade --fa-animation-duration: 8s;"></i></a>
          </div>
           
         <div class="col-sm-3 search">
