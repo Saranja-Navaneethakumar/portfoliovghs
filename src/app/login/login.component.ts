@@ -84,9 +84,10 @@ export class LoginComponent implements OnInit {
       if(username == data.username && password == data.password){
         this.sharedService.changeMessage('You have successfully logged in!');
         this.sharedService.printuser(username);
-        this.sharedService.setloginstate(true);
-        this.sharedService.setadmin(isadmin && data.username && data.password);
+        
         if(isadmin && data.username && data.password){
+          this.sharedService.setloginstate(true);
+        this.sharedService.setadmin(isadmin && data.username && data.password);
           this.router.navigate(['/admin']);
         }
         else{
@@ -104,7 +105,7 @@ export class LoginComponent implements OnInit {
         if(username == filterdata[i].username && password == filterdata[i].password){
           this.sharedService.changeMessage('You have successfully logged in!');
           this.sharedService.printuser(username);
-          this.sharedService.setloginstate(true);
+          
           this.sharedService.setemail(filterdata[i].email)
           this.dataService.setRegno(filterdata[i].regno);
           if(isadmin){
@@ -112,6 +113,7 @@ export class LoginComponent implements OnInit {
             this.loginform.reset();
           }
           else{
+            this.sharedService.setloginstate(true);
             this.router.navigate(['/student']);
           }
           
