@@ -71,3 +71,7 @@
 .align{
     margin-left: 25px;
 }
+
+input::placeholder {
+    color: rgba(236, 209, 76);
+  }
